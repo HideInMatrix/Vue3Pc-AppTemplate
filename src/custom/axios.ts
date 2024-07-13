@@ -155,9 +155,9 @@ axios.interceptors.request.use((config) => {
     ];
   }
 
-  if (localStorage.getItem("currentRole")) {
-    (config.headers as AxiosRequestHeaders)["currentRole"] =
-      localStorage.getItem("currentRole");
+  if (localStorage.getItem("userInfo")) {
+    (config.headers as AxiosRequestHeaders)["userInfo"] =
+      localStorage.getItem("userInfo");
   }
   return config;
 });
@@ -173,9 +173,6 @@ axios.interceptors.response.use((response) => {
   }
   return response;
 });
-// axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-// axios.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
-// axios.defaults.withCredentials = true
 
 // 返回在vue模板中的调用接口
 export default {
